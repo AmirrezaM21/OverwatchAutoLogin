@@ -65,9 +65,10 @@ launcher = "C:\Program Files (x86)\Overwatch\_retail_\Overwatch.exe"
 if __name__ == '__main__':
     print("Running Script...")
     email, password = getUser()
-    # os.startfile(launcher)
+    os.startfile(launcher)
     sample = readImage(sample_img)
+    time.sleep(0.1)
     while not locateOnScreen(sample):
         print("trying to locate element..")
         time.sleep(0.1)
-    # doTheThing(email, password)
+    doTheThing(email, password)
