@@ -33,7 +33,7 @@ def compress(screen, sample, rate):
 def locateOnScreen(image):
     screen = getScreen()
     compression = 0.5
-    screen, sample = compress(screen, sample, compression)
+    screen, image = compress(screen, image, compression)
     threshold = 0.70
     loc = findImage(screen, image, threshold)  
     return not isEmpty(loc)
@@ -67,8 +67,8 @@ if __name__ == '__main__':
     email, password = getUser()
     os.startfile(launcher)
     sample = readImage(sample_img)
-    time.sleep(0.1)
+    time.sleep(1)
     while not locateOnScreen(sample):
         print("trying to locate element..")
-        time.sleep(0.1)
+        time.sleep(0.12)
     doTheThing(email, password)
