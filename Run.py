@@ -14,9 +14,10 @@ def readImage(path : str):
 
 def doTheThing(email, password):
     pag.typewrite(email)
-    pag.press('tab')
     time.sleep(0.1)
+    pag.press('tab')
     pag.typewrite(password)
+    time.sleep(0.1)
     pag.press('enter')
 
 def findImage(screen, image, threshold):
@@ -59,7 +60,7 @@ def showImageTest(image):
 
 email = "my mail"
 password = "my password"
-sample_img = "sample.png"
+sample_img = "login.png"
 launcher = "C:\Program Files (x86)\Overwatch\_retail_\Overwatch.exe"
 
 if __name__ == '__main__':
@@ -67,7 +68,7 @@ if __name__ == '__main__':
     email, password = getUser()
     os.startfile(launcher)
     sample = readImage(sample_img)
-    time.sleep(1)
+    time.sleep(2)
     while not locateOnScreen(sample):
         print("trying to locate element..")
         time.sleep(0.12)
